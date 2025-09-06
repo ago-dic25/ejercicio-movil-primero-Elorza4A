@@ -1,1 +1,104 @@
+:root{
+    --gris-claro: #8c8c8c;
+    --gris-oscuro: #666666;
+    --negro: #000000;
+}
 
+body{
+    margin: 30px 0px;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0px;
+}
+
+img{
+    width: 100%;
+}
+
+h1{
+    font-size: 40px;
+}
+
+h2{
+    font-size: 30px;
+}
+
+h1, h2{
+    text-align: center;
+}
+
+.nav-principal{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--negro);
+    color: white;
+}
+
+.nav-principal li{
+    padding: 10px;
+}
+
+.nav-secundaria{
+    display: none;
+    background-color: var(--gris-oscuro);
+}
+
+.explorar:hover .nav-secundaria {
+    display: block;
+}
+
+.nav-principal li:hover,
+.explorar:hover .nav-secundaria li:hover{
+    background-color: var(--gris-claro);
+    border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+    .nav-principal{
+        width: 90%;
+        border-radius: 5px;
+        margin: 0 auto;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .explorar{
+        position: relative;
+    }
+
+    .nav-secundaria{
+        position: absolute;
+    }
+
+    main{
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .videojuegos{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+    }
+
+    .tarjeta{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 1024px) {
+    .videojuegos{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 10px;
+    }
+}
